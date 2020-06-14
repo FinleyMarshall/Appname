@@ -11,34 +11,28 @@
     </head>
 	<body>
 		<header id="header">
-			<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-				<a id="brand" class="navbar-brand" href="#">App Name</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="nav navbar-nav ml-auto">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-address-book"></i>Channels
-							</a>
-							<div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Channel 1</a>
-							<a class="dropdown-item" href="#">Channel 2</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"><i class="fas fa-address-book"></i>Manage Channels</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fas fa-user"></i>Users</a>
-						</li>
-						<li class="nav-item">
-						    <a class="nav-link" href="#"><i class="fas fa-sliders-h"></i>Settings</a>
-						</li>
-						<li class="nav-item">
-						    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i>Login</a>
-						</li>
-					</ul>
+			<div class="container">
+				<div class="row">
+				  <div class="col-6"> name</div>
+				  <div class="fas fa-address-book col-2"> Channels</div>
+				  <div class="fas fa-users col-2"> Users</div>
+				  <div class="fas fa-home col-2">Home</div>
 				</div>
-			</nav>
+			  </div>
+
+
+
+			  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand col-6" href="#">Name</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				  <div class="navbar-nav">
+					<a class="nav-item nav-link active fas fa-address-book" href="#">Channels <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link fas fa-users" href="#">users </a>
+					<a class="nav-item nav-link disabled fas fa-home" href="#">Home</a>
+				  </div>
+				</div>
+			  </nav>
 		</header>
