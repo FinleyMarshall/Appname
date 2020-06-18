@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
+  background:#747474;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-left: 0px;
 }
 
 .containererror {
@@ -27,11 +28,12 @@ a:active {
 }
 
 div[class*='col']{
-  margin-top: 30px;
+  border: white solid 1px;
   background:#747474;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 
