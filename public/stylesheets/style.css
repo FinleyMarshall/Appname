@@ -28,6 +28,7 @@ a:active {
 }
 
 div[class*='col']{
+  margin: 0px;
   border: white solid 1px;
   background:#747474;
   color: white;
@@ -35,6 +36,19 @@ div[class*='col']{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+div[class*='image']{
+  width: 200px;
+  height: 200px;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+
+
 
 
 div[class*='fas']{
