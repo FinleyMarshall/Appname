@@ -60,14 +60,25 @@ div[class*='fas']{
 
 #minh {
   border: solid green 5px;
-  height: 300px;
+  height: 12rem;
+
 }
 
 
-div[class*='yespaddingtop']{
-  
+.navbar-dark .navbar-nav .nav-link { 
+  color: white;
 }
 
-div[class*='yespaddingbottom']{
-  
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+
+div[class*='overflow-auto']{
+  border: red 1px dotted;
+  overflow: auto; 
+  display: inline-block;
+  height: 700px;
 }
