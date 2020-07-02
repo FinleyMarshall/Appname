@@ -13,7 +13,7 @@ a:hover {
   color: blue;
 }
 
-div[class*='col']{
+*[class*='col-']{
   border: solid white 2px;
   border-radius: .25em;
   margin: 0px;
@@ -24,25 +24,25 @@ div[class*='col']{
   padding-bottom: 15px;
 }
 
-div[class*='nopaddingwhole']{
+
+*[class*='nopaddingwhole']{
   padding: 0px;
 }
 
-div[class*='nopaddingtop']{
+*[class*='nopaddingtop']{
   padding-top: 0px;
 }
 
-div[class*='nopaddingbottom']{
+*[class*='nopaddingbottom']{
   padding-bottom: 0px;
 }
 
-div[class*='image']{
+*[class*='image']{
   width: 200px;
   height: 200px;
 }
 
 .card-body {
-  padding-top: 1.25em;
   padding-left: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
@@ -71,14 +71,28 @@ div[class*='fas']{
 
 
 .navbar-expand-sm .navbar-nav .nav-link {
-    padding-right: 4rem;
-    padding-left: 4rem;
+  padding-right: 0rem;
+  padding-left: 0rem;
+}
+
+*[class*='width']{
+  width: 33%;
+  border: 1px red solid;
 }
 
 
-div[class*='overflow-auto']{
-  border: red 1px dotted;
+*[class*='overflow-auto1']{
   overflow: auto; 
-  display: inline-block;
-  height: 700px;
+  height: 768px;
+}
+
+
+*[class*='overflow-auto2']{
+  overflow: auto; 
+  height: 1100px;
+}
+
+
+#accordion {
+  width: 100%;
 }
