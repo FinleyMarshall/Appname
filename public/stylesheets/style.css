@@ -14,8 +14,7 @@ a:hover {
 }
 
 *[class*='col-']{
-  border: solid white 2px;
-  border-radius: .25em;
+  border: 1px white solid;
   margin: 0px;
   background:#747474;
   color: white;
@@ -35,11 +34,6 @@ a:hover {
 
 *[class*='nopaddingbottom']{
   padding-bottom: 0px;
-}
-
-*[class*='image']{
-  width: 200px;
-  height: 200px;
 }
 
 .card-body {
@@ -95,4 +89,11 @@ div[class*='fas']{
 
 #accordion {
   width: 100%;
+}
+
+.half-height{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
