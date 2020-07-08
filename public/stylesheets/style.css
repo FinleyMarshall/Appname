@@ -3,75 +3,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-a:link {
-  text-align: center;
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  color: blue;
-}
-
 *[class*='col-']{
   border: 1px white solid;
   margin: 0px;
-  background:#747474;
   color: white;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-
-*[class*='nopaddingwhole']{
-  padding: 0px;
-}
-
-*[class*='nopaddingtop']{
-  padding-top: 0px;
-}
-
-*[class*='nopaddingbottom']{
-  padding-bottom: 0px;
-}
-
-.card-body {
-  padding-left: 0px;
-  padding-bottom: 0px;
-  padding-right: 0px;
-}
-
-img{
-  height: 100%;
-  width: 100%;
-}
-
-div[class*='fas']{
-  font-size: 16px;
-  text-align: center;
-}
-
-#minh {
-  border: solid green 5px;
-  height: 12rem;
-
-}
-
-
-.navbar-dark .navbar-nav .nav-link { 
-  color: white;
-}
-
-
-.navbar-expand-sm .navbar-nav .nav-link {
-  padding-right: 0rem;
-  padding-left: 0rem;
-}
-
-*[class*='width']{
-  width: 33%;
-  border: 1px red solid;
+.modal-content{
+  background-color: #747474;
+  border: 1px white solid;
 }
 
 
@@ -80,20 +23,19 @@ div[class*='fas']{
   height: 768px;
 }
 
-
-*[class*='overflow-auto2']{
-  overflow: auto; 
-  height: 1100px;
-}
-
-
-#accordion {
-  width: 100%;
-}
-
 .half-height{
   height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+*[class*='form-group']{
+  text-align: left;
+}
+
+
+.card{
+  background-color: #747474;
+}
+
