@@ -29,6 +29,7 @@ body {
 
 .card{
   background-color: #747474;
+  border: white 1px solid;
 }
 
 
@@ -36,13 +37,27 @@ body {
   height: 10vh;
 }
 
-#nom{
-  margin-top: 0px;
-}
-
 *[class*='border']{
 border: white 1px solid;
 border-radius: .3rem;
 }
 
+
+*[class*='b-dg']{
+  background-color: #5e5d5d;
+}
+
+.btn-secondary {
+  background-color: #5e5d5d;
+  border: white 1px solid;
+
+}
+
+*[class*='left']{
+  text-align: left;
+}
+
+*[class*='right']{
+  text-align: right;
+}
 
