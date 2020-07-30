@@ -1,9 +1,0 @@
-{
-    "apiKey": "AIzaSyAQeZcEpKIc5YzBVqpMXFBiTeM6tE2NJT4",
-    "authDomain": "message-all.firebaseapp.com",
-    "databaseURL": "https://message-all.firebaseio.com",
-    "projectId": "message-all",
-    "storageBucket": "message-all.appspot.com",
-    "messagingSenderId": "515428482237",
-    "appId": "1:515428482237:web:ae5183455b77fab195cbd4"
-}
