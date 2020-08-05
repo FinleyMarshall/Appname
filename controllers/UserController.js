@@ -122,6 +122,7 @@ class UserController{
     updateAccount =  async (request, response) => {
 
         var currentUser = AraDTUserModel.getCurrentUser();
+        //
         if (currentUser) {
             try{
                 await AraDTUserModel.update(request, response)
