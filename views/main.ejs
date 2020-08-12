@@ -1,0 +1,179 @@
+<%- include('partials/header'); %> 
+<%- include('partials/nav'); %> 
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 py-0"> 
+      
+      <div class="row border b-dg maxh">
+        <div class="col-2 col-md-3 py-0 pr-0 h-100 left">
+          <img class="rounded-circle h-100" src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+        </div>
+
+        <div class="col-5 col-md-6 px-0"> Channel Name</div>
+
+        <div class="col-5 col-md-3 pl-0 right"> 
+          
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Channel-Settings">
+            <i class="fas fa-cog"></i>  
+            Channel Settings 
+          </button>
+          
+          <div class="modal fade" id="Channel-Settings" tabindex="-1" role="dialog" aria-labelledby="Channel-Settings">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">
+                    Channel Settings 
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body row py-0">
+                  <form class="col-5">
+                    <div class="form-group">
+                      <label>Channel Name</label>
+                      <input type="text" class="form-control"placeholder="Channel Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Avatar</label>
+                      <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+                    </div>
+                  </form>
+                  
+                  <form class="col-7">
+                    <div class="form-group">
+                      <label>New Channel Name</label>
+                      <input type="email" class="form-control"placeholder="New Email">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Choose a new avatar</label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="photo">
+                        <label class="custom-file-label" for="photo">Choose a file</label>
+                      </div>
+                    </div>
+                  </form>
+
+                  
+
+                  <button type="submit" data-dismiss="modal" class="btn btn-secondary col-12">Update Setting</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 overflow-auto1 py-0">
+          <div class="col-12">
+            <div class="border row maxh b-dg">
+              <div class="col-2 py-0 h-100 left">
+                <img class="rounded-circle h-100" src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+              </div>
+              <div class="col-8">
+                name
+              </div>
+              <div class="col-2 right">
+                Time
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-12 border b-dg">
+                message of user
+              </div>
+            </div>
+          </div> 
+          
+          <div class="col-12">
+            <div class="border row maxh b-dg">
+              <div class="col-2 py-0 h-100 left">
+                <img class="rounded-circle h-100" src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+              </div>
+              <div class="col-8">
+                name
+              </div>
+              <div class="col-2 right">
+                Time
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-12 border b-dg">
+                message of user
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-12">
+            <div class="border row maxh b-dg">
+              <div class="col-2 py-0 h-100 left">
+                <img class="rounded-circle h-100" src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+              </div>
+              <div class="col-8">
+                name
+              </div>
+              <div class="col-2 right">
+                Time
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-12 border b-dg">
+                message of user
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-12">
+            <div class="border row maxh b-dg">
+              <div class="col-2 py-0 h-100 left">
+                <img class="rounded-circle h-100" src="/images/dummy-200x200.png" class="card-img-top" alt="...">
+              </div>
+              <div class="col-8">
+                name
+              </div>
+              <div class="col-2 right">
+                Time
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-12 border b-dg">
+                message of user
+              </div>
+            </div>
+          </div> 
+          
+
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="border col-12"> 
+          
+          <form>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </form>
+
+          <button type="submit" class="btn btn-secondary">
+            Send Message
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<%- include('partials/footer'); %>

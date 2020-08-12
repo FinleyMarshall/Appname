@@ -23,11 +23,33 @@ class UserController{
         AraDTApp.post('/register', this.register);
         AraDTApp.post('/login', this.login);
         AraDTApp.get('/logout', this.logout);
-        AraDTApp.get('/login', this.getLogin);
         AraDTApp.get('/register', this.getregister);
+        AraDTApp.get('/account', this.getaccount);
         AraDTApp.get('/account', this.getAccount);
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
+        AraDTApp.get('/channels', this.getchannels);
+        AraDTApp.get('/users', this.getusers);
+        AraDTApp.get('/main', this.getmain);
+
+
+
+    }
+
+    getaccount(request, response, next) {
+        response.render('account');
+    }
+
+    getchannels(request, response, next) {
+        response.render('channels');
+    }
+
+    getusers(request, response, next) {
+        response.render('users');
+    }
+    
+    getmain(request, response, next) {
+        response.render('main');
     }
 
     /**
@@ -184,15 +206,12 @@ class UserController{
                 response.redirect('/');
             });
     }
-
-    getLogin(request, response, next) {
-        response.render('login');
-    }
-    
     
     getregister(request, response, next) {
         response.render('register');
     }
+
+    
 }
 module.exports = UserController;
 
