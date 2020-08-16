@@ -28,6 +28,15 @@
             <h5 class="col-12 border">
                 Profile Update
             </h5>
+            <% if (locals.errors && locals.errors.profile) { %>
+                <div class="generic-errors row justify-content-md-center py-0 alert alert-primary col-12">
+                    <div class=" col-12">
+                        <% locals.errors.profile.forEach(function(error) { %>
+                            <h5 class="alert-primary" role="alert"><%= error %></h5>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } %>
             <form class="col-12 border" action="/account" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>New Email address</label>
@@ -76,14 +85,14 @@
                 Password Update
             </h5>
             <% if (locals.errors && locals.errors.password) { %>
-                    <div class="row justify-content-md-center py-0">
-                        <div class="generic-errors col-12 py-0">
-                            <% locals.errors.password.forEach(function(error) { %>
-                                <p class="alert alert-primary" role="alert"><%= error %></p>
-                            <% }) %>
-                        </div>
+                <div class="generic-errors row justify-content-md-center py-0 alert alert-primary col-12">
+                    <div class=" col-12">
+                        <% locals.errors.password.forEach(function(error) { %>
+                            <h5 class="alert-primary" role="alert"><%= error %></h5>
+                        <% }) %>
                     </div>
-            <% } %>
+                </div>
+            <% } %> 
             <form class="col-12 border" action="/password" method="post">
                 <div class="form-group">
                     <label>New Password</label>

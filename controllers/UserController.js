@@ -35,7 +35,7 @@ class UserController{
 
 
     }
-
+    //sets up the different pages
     getaccount(request, response, next) {
         response.render('account');
     }
@@ -50,6 +50,17 @@ class UserController{
     
     getmain(request, response, next) {
         response.render('main');
+    }
+
+    getregister(request, response, next) {
+        response.render('register');
+    }
+
+    getAccount(request, response){ 
+        if (!request.session.token) {
+            response.redirect('/');
+        }
+        response.render('account');
     }
 
     /**
@@ -140,76 +151,110 @@ class UserController{
 
 
     /* YOU NEED TO ADD COMMENTS FROM HERE ON */
-
+    /**
+     * Asynchronous function that handles POST form submission to '/updateaccount'
+     * On success, redirects to '/account'
+     * Onfailure, redirects to '/account' with error message
+     * Requires the following POST form name fields:
+     * 
+     * @param {string}      request.body.email              email form field
+     * @param {string}      request.body.displayName           username form field
+     * @param {File}      request.body.Avatar    Avator form field
+     * 
+     * @returns {Object}    response.redirect object
+     */
     updateAccount =  async (request, response) => {
 
         var currentUser = AraDTUserModel.getCurrentUser();
-        //
+        // If the user is the current user
         if (currentUser) {
+            // Try to see if form submission is valid
             try{
                 await AraDTUserModel.update(request, response)
                     .then(() => {
                         response.locals.errors.profile = ['Your details have been updated'];
                         response.render('account');
+                        // registration successful, so redirect to account
+
                     }).catch((error) => {
                         response.locals.errors.profile = [error.message];
                         response.render('account');
+                      // registration not successful, so redirect to account with error message
+
                     });
             } catch(errors) {
+            //form wsa not successful so return error
                 response.locals.errors.profile = errors;
                 response.render('account');
             }
         } else {
             this.logout(request, response);
+            // Users was not current user, so logged out current user
         }
 
     };
-    
+
+    /**
+     * Asynchronous function that handles POST form submission to '/updatepassword'
+     * On success, redirects to '/account'
+     * Onfailure, redirects to '/account' with error message
+     * Requires the following POST form name fields:
+     * 
+    * @param {string}      request.body.password           password form field
+     * @param {string}      request.body.passwordConfirm    passwordConfirm form field
+     * 
+     * @returns {Object}    response.redirect object
+     */
     updatePassword = async (request, response) => {
 
         var currentUser = AraDTUserModel.getCurrentUser();
+       // If the user is the current user
         if (currentUser) {
+            // Try to see if form submission is valid
             try{
                 await AraDTUserModel.updatePassword(request, response)
                     .then(() => {
                         response.locals.errors.password = ['Your password has been updated'];
                         response.render('account');
+                    // Update password successful, so redirect to account
                     }).catch((error) => {
                         response.locals.errors.password = [error.message];
                         response.render('account');
+                    // Update password not successful, so redirect to account, with error message
+
                     });
             } catch(errors) {
                 response.locals.errors.password = errors;
                 response.render('account');
+                //form waw not successful so return error
             }
         } else {
             this.logout(request, response);
+            // Users was not current user, so log out current user
         }
 
     };
 
-    getAccount(request, response){
-        
-        if (!request.session.token) {
-            response.redirect('/');
-        }
-        response.render('account');
-    }
-
+    /**
+     * Asynchronous function that handles POST form submission to '/logout'
+     * redirects to '/'
+     */
     logout = async (request, response) => {
         request.session.errors.general = ['You have been logged out'];
         response.locals.loggedin = false;
+        //sends success message
         request.session.destroy();
+        //restarts session
         await AraDTDatabase.firebase.auth().signOut().then(function() {
                 response.redirect('/');
+                //on successful logout, redirect to /
             }).catch(function(error) {
                 response.redirect('/');
+              //on unsuccessful logout, redirect to /, wiht error message
+
             });
     }
     
-    getregister(request, response, next) {
-        response.render('register');
-    }
 
     
 }

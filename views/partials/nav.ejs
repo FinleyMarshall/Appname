@@ -10,41 +10,34 @@
         <div class="collapse navbar-collapse col-12 p-0 row" id="navbarNav">
             <ul class="navbar-nav flex-row col-12 p-0 row">
 
-
                 <li class="border nav-item active col-md-3">
-                    <form action="/" method="POST">
-                    <button type="button" class="btn btn-secondary" method>
-                        <i class="fas fa-sign-out-alt"></i>  
-                        Logout 
-                    </button>
-                    </form>
-                </li>
-
-                <li class="border nav-item active col-md-3">
-                    <form action="/channels" method="dialog">
-                    <button type="submit" class="btn btn-secondary">
+                    <a href="/channels" class="btn btn-secondary">
                         <i class="fas fa-users"></i> 
                         Channels
-                    </button>
-                    </form>
+                    </a>
                 </li>
 
                 <li class="border nav-item active col-md-3">
-                    <button type="button" class="btn btn-secondary">
+                    <a href="/Users" class="btn btn-secondary">
                         <i class="fas fa-users"></i> 
                         Users
-                    </button>
-
+                    </a>
                 </li>
 
                 <li class="border nav-item active col-md-3">
+                    <a href="/account" class="btn btn-secondary">
+                        <i class="fas fa-users"></i> 
+                        User Settings
+                    </a>
+                </li>
 
-                    <button type="button" class="btn btn-secondary">
-                        <i class="fas fa-cog"></i>  
-                        User Settings 
-                    </button>
-                    
-                    
+                <li class="border nav-item active col-md-3">
+                    <form action="/logout" action="post">
+                        <button type="submit" class="btn btn-secondary" method>
+                            <i class="fas fa-sign-out-alt"></i>  
+                            Logout 
+                        </button>
+                    </form>
                 </li>
 
             </ul>

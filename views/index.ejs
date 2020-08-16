@@ -3,6 +3,24 @@
     <div class="login-box p-5 text-center border">
             <i class="fas fa-sign-in-alt fa-2x"></i>
             <h1 class="d-inline-block"> Login</h1>
+            <% if (locals.errors && locals.errors.login) { %>
+                <div class="generic-errors row justify-content-md-center py-0 alert alert-primary col-12">
+                    <div class=" col-12">
+                        <% locals.errors.login.forEach(function(error) { %>
+                            <h5 class="alert-primary" role="alert"><%= error %></h5>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } %> 
+            <% if (locals.errors && locals.errors.register) { %>
+                <div class="generic-errors row justify-content-md-center py-0 alert alert-primary col-12">
+                    <div class=" col-12">
+                        <% locals.errors.register.forEach(function(error) { %>
+                            <h5 class="alert-primary" role="alert"><%= error %></h5>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } %> 
         <form action="/login" method="post">
             <div class="form-group">
                 <label>Email address</label>
