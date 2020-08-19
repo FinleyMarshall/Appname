@@ -31,10 +31,8 @@ class UserController{
         AraDTApp.get('/channels', this.getchannels);
         AraDTApp.get('/users', this.getusers);
         AraDTApp.get('/main', this.getmain);
-
-
-
     }
+    
     //sets up the different pages
     getaccount(request, response, next) {
         response.render('account');

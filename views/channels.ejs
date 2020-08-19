@@ -5,7 +5,48 @@
     <h5 class="modal-title col-12">
         Channels 
     </h5>
-        
+    <div class="col-12 p-0 border">
+        <form class="col-12 p-0" action="/channels/add" method="post" enctype="multipart/form-data">
+            <div class="form-group col-12">
+                <label>Channel Name</label>
+                <input type="email" class="form-control"placeholder="New Email">
+            </div>
+
+            <div class="form-group col-12">
+                <label>Choose a Channel avatar</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="photo">
+                    <label class="custom-file-label" for="photo">Choose a file</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <label>Choose Users</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+            </div>
+            <button class="btn btn-secondary" type="submit">Register</button>
+        </form>
+
+
+        <% var users = locals.channels.users %>
+        <form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
+            <input type="text" class="form-control" name="name" placeholder="Display Name" value="">
+            <input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
+            <% if (users) { %>
+                <% users.forEach(function(user) { %>
+                    <input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
+                    <p><%= user.name %></p>
+                <% }) %>
+            <% } %>
+            <button id="update" type="submit">Create</button>
+        </form>
+
+    </div>
+
+    
+
     <div class="col-12 row p-0">							
                                 
         <div class="col-md-4  px-0 pt-0 card">
