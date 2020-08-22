@@ -5,49 +5,90 @@
     <h5 class="modal-title col-12">
         Channels 
     </h5>
+    <% var users = locals.channels.users %>
     <div class="col-12 p-0 border">
-        <form class="col-12 p-0" action="/channels/add" method="post" enctype="multipart/form-data">
+        <form class="col-12" action="/channels/add" method="post" enctype="multipart/form-data">
             <div class="form-group col-12">
                 <label>Channel Name</label>
-                <input type="email" class="form-control"placeholder="New Email">
+                <input type="text" name="name" class="form-control" placeholder="Channel_Name">
             </div>
 
             <div class="form-group col-12">
                 <label>Choose a Channel avatar</label>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="photo">
+                    <input type="file" class="custom-file-input" id="photo" name="avatar" id="avatar-upload">
                     <label class="custom-file-label" for="photo">Choose a file</label>
                 </div>
             </div>
-            <div class="col-12">
-                <label>Choose Users</label>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">1</label>
-                </div>
+            
+            <div class="row">
+                <% if (users) { %>
+                    <div class="col-12 border">Choose Users</div>
+                    <% users.forEach(function(user) { %>
+                        <div class="col-md-4 border">
+                            <div class="form-check form-check-inline">
+                                <input id="user<%= user.id %>" type="checkbox" class="form-check-input"  name="users" value="<%= user.id %>">
+                                <label class="form-check-label" for="user<%= user.id %>"> <%= user.name %></label>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>
-            <button class="btn btn-secondary" type="submit">Register</button>
+            <button class="btn btn-secondary" id="update" type="submit">Create</button>
         </form>
+        
+        <% 
+        var channels = locals.channels
+        var owned = ("owned" in  channels) ? channels.owned : false
+        var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
+        %>
 
-
-        <% var users = locals.channels.users %>
-        <form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
-            <input type="text" class="form-control" name="name" placeholder="Display Name" value="">
-            <input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
-            <% if (users) { %>
-                <% users.forEach(function(user) { %>
-                    <input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
-                    <p><%= user.name %></p>
-                <% }) %>
-            <% } %>
-            <button id="update" type="submit">Create</button>
-        </form>
-
+        <div id="owned-channels" class="user-channels col-12 p-0">
+            <div class="col-12 border">
+            <h4>Your Channels</h4>
+            </div>
+        <% if (owned) { %>
+            <div class="col-12 p-0 row">
+            <% owned.forEach(function(channel) { %>
+                <div class="col-md-4 p-0">
+                    <div class="col-12 px-0 pt-0 card">
+                        <img src="<%= channel.image %>" class="card-img-top" alt="<%= channel.name %>">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= channel.name %></h5>
+                        <a href="/channel/<%= channel.slug %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                        <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        <% }  %>
+        </div>
+        <div id="subscribed-channels" class="col-12 p-0">
+            <div class="col-12 border">
+            <h4>Subscribed Channels</h4>
+            </div>
+        <% if (subscribed) { %>
+            <div class="col-12 p-0 row">
+            <% subscribed.forEach(function(channel) { %>
+                <div class="col-md-4 p-0">
+                    <div class="col-12 px-0 pt-0 card">
+                        <img src="<%= channel.image %>" class="card-img-top" alt="<%= channel.name %>">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= channel.name %></h5>
+                        <a href="/channel/<%= channel.slug %>/" class="btn btn-secondary"><%= channel.name %></a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        <% }  %>
+        </div>
     </div>
 
     
 
-    <div class="col-12 row p-0">							
+    <!-- <div class="col-12 row p-0">							
                                 
         <div class="col-md-4  px-0 pt-0 card">
             <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
@@ -97,7 +138,7 @@
             </div>
         </div>
         
-    </div>
+    </div> -->
 </div>
 
 <%- include('partials/footer'); %>

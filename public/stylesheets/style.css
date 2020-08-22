@@ -73,3 +73,10 @@ border-radius: .3rem;
 .bg-dark{
   background-color: #5e5d5d;
 }
+
+.maxsize-12vw{
+  max-width: 12vw;
+  max-height: 12vw;
+  min-height: 12vw;
+  min-width: 12vw;
+}

@@ -28,7 +28,6 @@ class UserController{
         AraDTApp.get('/account', this.getAccount);
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
-        AraDTApp.get('/channels', this.getchannels);
         AraDTApp.get('/users', this.getusers);
         AraDTApp.get('/main', this.getmain);
     }
@@ -38,9 +37,6 @@ class UserController{
         response.render('account');
     }
 
-    getchannels(request, response, next) {
-        response.render('channels');
-    }
 
     getusers(request, response, next) {
         response.render('users');
