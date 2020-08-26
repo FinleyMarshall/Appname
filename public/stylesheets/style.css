@@ -75,8 +75,13 @@ border-radius: .3rem;
 }
 
 .maxsize-12vw{
-  max-width: 12vw;
-  max-height: 12vw;
-  min-height: 12vw;
-  min-width: 12vw;
+  max-width: 6vw;
+  max-height: 6vw;
+  min-height: 6vw;
+  min-width: 6vw;
+  border-radius: 50%;
+}
+
+.object-fit{
+  object-fit: cover;
 }

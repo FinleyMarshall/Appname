@@ -26,9 +26,13 @@
                     <div class="col-12 border">Choose Users</div>
                     <% users.forEach(function(user) { %>
                         <div class="col-md-4 border">
-                            <div class="form-check form-check-inline">
-                                <input id="user<%= user.id %>" type="checkbox" class="form-check-input"  name="users" value="<%= user.id %>">
-                                <label class="form-check-label" for="user<%= user.id %>"> <%= user.name %></label>
+                            <div class="form-check form-check-inline maxh col-12 p-0">
+                                <input id="user<%= user.id %>" type="checkbox" class="form-check-input col-2 p-0"  name="users" value="<%= user.id %>">
+                                <label class="form-check-label col-10 p-0" for="user<%= user.id %>"> 
+                                    <img src="<%= user.image %>" alt="<%= user.image %>" class="maxsize-12vw"> 
+                                    <%= user.name %>
+                                </label>
+
                             </div>
                         </div>
                     <% }) %>
