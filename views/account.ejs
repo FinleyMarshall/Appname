@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 <p class="p-0">Avatar</p>
-                <img src="<%= user.photoURL %>" class="card-img-top" alt="<%= user.photoURL %>">
+                <img src="<%= user.photoURL %>" class="card-img" alt="<%= user.photoURL %>">
             </div>
         </form>
         <div class="col-md-7 p-0">
@@ -50,28 +50,6 @@
                         value="<%= locals.user.displayName %>">
                 </div>
 
-                <!-- <div class="form-group">
-                        <label>New Password</label>
-                        <input type="password" class="form-control" placeholder="New Password">
-                    </div> -->
-
-                <!-- <div class="form-group">
-                        <label>Re-enter New Password</label>
-                        <input type="password" class="form-control" placeholder="Re-enter New Password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Current Password</label>
-                        <input type="password" class="form-control" placeholder="Current Password">
-                    </div> -->
-
-                <!-- <div class="form-group">
-                        <label>Choose a new avatar</label>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="photo">
-                          <label class="custom-file-label" for="photo">Choose a file</label>
-                        </div>
-                    </div> -->
                 <div class="form-group">
                     <label>Choose a new avatar</label>
                     <input class="form-control" type="file" name="avatar">
@@ -110,7 +88,6 @@
             </form>
         </div>
     </div>
-
 </div>
 
 <%- include('partials/footer'); %>

@@ -5,6 +5,8 @@ body {
 
 html,body {
   height: 100%;
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll;
 }
 
 *[class*='col-']{
@@ -22,11 +24,11 @@ html,body {
 
 
 *[class*='overflow-auto1']{
-  overflow: auto; 
+  overflow-y: auto; 
   height: calc(100vh - 325px);
 }
 
-*[class*='form-group']{
+*[class*='form-group'] {
   text-align: left;
 }
 
