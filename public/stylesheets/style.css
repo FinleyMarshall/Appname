@@ -4,9 +4,7 @@ body {
 }
 
 html,body {
-  height: 100%;
-  overflow: -moz-scrollbars-vertical; 
-  overflow-y: scroll;
+  height: 100%; 
 }
 
 *[class*='col-']{
