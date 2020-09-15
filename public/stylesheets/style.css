@@ -27,7 +27,7 @@ button.focus, button:focus {
 
 *[class*='overflow-auto1']{
   overflow-y: auto; 
-  height: calc(100vh - 325px);
+  height: calc(100vh - 274px);
 }
 
 *[class*='form-group'] {
@@ -37,11 +37,6 @@ button.focus, button:focus {
 .card{
   background-color: #747474;
   border: white 1px solid;
-}
-
-
-*[class*='maxh']{
-  height: 10vh;
 }
 
 *[class*='border']{
@@ -92,4 +87,8 @@ border-radius: .3rem;
 
 .scrolling-wrapper{
   overflow-x: auto;
+}
+
+#main {
+  border: green 1px solid;
 }

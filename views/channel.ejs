@@ -1,0 +1,90 @@
+<%- include('partials/header'); %>
+<%- include('partials/nav'); %>
+<% 
+var showChannel = locals.channel.channel
+var messages = locals.messages
+var user = locals.user
+var participants = (locals.channel.inUsers) ? locals.channel.inUsers : false
+%> 
+<div id="main col-12 p-0 ">
+	<div class="container-fluid col-12 p-0">
+		<div class="row col-12 p-0">
+			<div id="sidebar" class="col-sm-3 p-0">
+				<% if (participants) { %>
+				<div id="participants" class="col-12 p-0">
+					<h5 class="col-12 border">Channel Members</h5>
+					<div class="col-12 p-0 row">
+					<% participants.forEach(function(user) { %>
+						<div id="user<%= user.id %>"  class="border col-sm-12 col-6">
+							<div class="avatar">
+								<img class="rounded-circle border border-dark text-center maxsize-6vw" src="<%= user.image %>" alt="<%= user.name %>">
+							</div>
+							<p class="m-0"><%= user.name %> <small class="text-muted d-none"> typing... </small></p>
+						</div>
+					<% }) %>
+					</div>
+				</div>
+				<% } else { %>
+					<p><div class="alert alert-primary" role="alert">Make some friends on here and add them to your channels!</div></p>
+				<% }  %>
+			</div>  
+			<main role="main" class="col-sm-9 p-0">
+				<h5 class="col-12 border"><%= showChannel.name %></h5>
+				<div id="chat" class="col-12 overflow-auto1 py-0 border">
+				<% if (messages) { %>
+					<% messages.forEach(function(message) { %>
+					<!-- <div class="message <%=message.direction%> col-12 p-0" data-time="<%=message.time%>">
+						<div class="user">
+							<img class="rounded-circle border border-dark text-center maxsize-6vw" src="<%=message.user.image%>" alt="Image">
+							<p><%=message.user.name%></p>
+						</div>
+						<p><%=message.msg%></p>
+						<div class="col-2 right">
+						<small class="text-muted time"></small>
+						</div>
+					</div> -->
+
+					<div class="message <%=message.direction%> col-12" data-time="<%=message.time%>">
+						<div class="border row b-dg">
+							<div class="col-2 left">
+								<img class="rounded-circle maxsize-6vw" src="<%=message.user.image%>" class="card-img-top" alt="Image">
+							</div>
+							<div class="col-8">
+								<h5><%=message.user.name%></h5>
+							</div>
+							<div class="col-2 right">
+								<small class="time"></small>									  
+							</div>
+						</div>
+						<div class="row"> 
+							<div class="col-12 border b-dg left">
+								<%=message.msg%>
+							</div>
+						</div>
+					</div> 
+					<% }) %>
+				<% }  %>
+				</div>           
+				<div id="message">
+					<div class="border col-12"> 								
+						<form id="message-form">
+							<div class="form-group">
+								<label>Message</label>
+								<textarea class="form-control" id="message-box" placeholder="Type your message here" rows="1"></textarea>
+								<input 
+									data-user='{"uid":"<%= locals.user.uid %>","name":"<%= locals.user.displayName %>","image":"<%= locals.user.photoURL %>"}'
+									data-channel='{"uid":"<%= showChannel.id %>","name":"<%= showChannel.name %>"}'
+									type="hidden" id="chat-info">
+							</div>
+
+							<button id="send-message" type="submit" class="btn btn-secondary">
+								Send
+							</button>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div> <!-- end .row --> 
+	</div><!-- end .container-fluid -->
+</div><!-- end #main -->
+<%- include('partials/footer'); %>

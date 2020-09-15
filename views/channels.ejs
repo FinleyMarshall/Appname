@@ -6,9 +6,9 @@
         Channels 
     </h5>
     <% var users = locals.channels.users %>
-    <form class="col-12 p-0" action="/channels/add" method="post" enctype="multipart/form-data">
+    <form class="col-12" action="/channels/add" method="post" enctype="multipart/form-data">
         <div class="col-12 border">
-            <h5>Create a Channel</h5>
+            <p class="m-0">Create a Channel</p>
         </div>
         <div class="col-12 p-0 border">
             <div class="form-group col-12">
@@ -56,7 +56,7 @@
 
     <div id="owned-channels" class="user-channels col-12 p-0">
         <div class="col-12 border">
-            <h4>Your Channels</h4>
+            <h5>Your Channels</h5>
         </div>
         <% if (owned) { %>
             <div class="col-12 p-0 row">
@@ -66,7 +66,7 @@
                         <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
                         <div class="card-body">
                             <h5 class="card-title"><%= channel.name %></h5>
-                            <a href="/channel/<%= channel.slug %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                            <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
                             <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
     
     <div id="subscribed-channels" class="col-12 p-0">
             <div class="col-12 border">
-            <h4>Subscribed Channels</h4>
+            <h5>Subscribed Channels</h5>
         </div>
         <% if (subscribed) { %>
             <div class="col-12 p-0 row">
@@ -88,7 +88,7 @@
                         <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
                         <div class="card-body">
                             <h5 class="card-title"><%= channel.name %></h5>
-                            <a href="/channel/<%= channel.slug %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                            <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
                         </div>
                     </div>
                 </div>
