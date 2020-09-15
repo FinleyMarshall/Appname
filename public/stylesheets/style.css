@@ -30,6 +30,17 @@ button.focus, button:focus {
   height: calc(100vh - 274px);
 }
 
+#sidebar{
+  overflow-y: auto; 
+  height: calc(100vh - 62px);
+}
+
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    height: auto;
+  }
+}
+
 *[class*='form-group'] {
   text-align: left;
 }
