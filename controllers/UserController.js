@@ -44,11 +44,22 @@ class UserController{
         AraDTApp.get('/account', this.getAccount);
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
+        AraDTApp.get('/main', this.getmain);
+        AraDTApp.get('/users', this.getusers);
+
     }
 
     signup = async (request, response) => {
         response.render('register');
     };
+
+    getmain(request, response, next) {
+        response.render('main');
+    }
+    
+    getusers(request, response, next) {
+        response.render('users');
+    }
 
     /**
      * Asynchronous function that handles post form submission to '/login'

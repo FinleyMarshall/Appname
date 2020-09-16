@@ -20,19 +20,14 @@ button.focus, button:focus {
   padding-bottom: 15px;
 }
 
-.modal-content{
-  background-color: #747474;
-  border: 1px white solid;
-}
-
 *[class*='overflow-auto1']{
   overflow-y: auto; 
-  height: calc(100vh - 274px);
+  height: calc(100vh - 156px);
 }
 
 #sidebar{
   overflow-y: auto; 
-  height: calc(100vh - 62px);
+  height: calc(100vh + 56px);
 }
 
 @media only screen and (max-width: 768px) {
@@ -62,7 +57,6 @@ border-radius: .3rem;
 .btn-secondary {
   background-color: #5e5d5d;
   border: white 1px solid;
-
 }
 
 *[class*='left']{
@@ -73,31 +67,35 @@ border-radius: .3rem;
   text-align: right;
 }
 
-
 .login-box {
   width: 600px;
   background-color: #747474;
 }
 
-.bg-dark{
-  background-color: #5e5d5d;
-}
-
 .maxsize-6vw{
-  max-width: 6vw;
-  max-height: 6vw;
-  min-height: 6vw;
-  min-width: 6vw;
+  max-width: 8vh;
+  max-height: 8vh;
+  min-height: 8vh;
+  min-width: 8vh;
   border-radius: 50%;
 }
 
 .card-img-top{
-  height: 33vw; 
-  width: 33vw;
+  height: calc(33.333333vw - 2px); 
+  width: calc(33.333333vw - 2px);
+}
+
+@media only screen and (max-width: 768px) {
+  .card-img-top {
+    height: calc(50vw - 2px);
+    width: calc(50vw - 2px);
+  }
 }
 
 .scrolling-wrapper{
   overflow-x: auto;
+  border-left: 1px solid white;
+  border-radius: .3rem;
 }
 
 #main {

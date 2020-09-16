@@ -1,60 +1,44 @@
 <%- include('partials/header'); %> 
 <%- include('partials/nav'); %> 
 
-<div class="container border col-12 p-0">
-    <h5 class="modal-title col-12">
+<% 
+var showChannel = locals.channel.channel
+var messages = locals.messages
+var user = locals.channels.user
+var participants = locals.channels.users
+%> 
+
+<div class="container col-12 p-0">
+    <h5 class="modal-title col-12 border">
         Users 
     </h5>
         
     <div class="col-12 row p-0">							
-                                
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                           
+        <% if (participants) { %>
+            <div id="participants" class="col-12 p-0">
+                <div class="col-12 p-0 row">
+                <% participants.forEach(function(user) { %>
+                    <div id="user<%= user.id %>"  class="col-md-4 col-6 p-0">
+                        <div class="col-12 px-0 pt-0 card">
+                            <img src="<%= user.image %>" class="card-img-top" alt="<%= user.name %>">
+                            <div class="card-body">
+                            <h5 class="card-title"><%= user.name %></h5>
+                            <a href="#" class="btn btn-secondary">Message <%= user.name %></a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+                </div>
             </div>
-        </div>
+            <% } else { %>
+                <p><div class="alert alert-primary" role="alert">Make some friends on here</div></p>
+            <% }  %>
+
+
+       
     
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
-            </div>
-        </div>
         
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
-            </div>
-        </div>
-        
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
-            </div>
-        </div>
-        
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
-            </div>
-        </div>
-        
-        <div class="col-md-4  px-0 pt-0 card">
-            <img src="/images/dummy-200x200.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <a href="#" class="btn btn-secondary">Go somewhere</a>
-            </div>
-        </div>
         
     </div>
 </div>

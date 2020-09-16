@@ -9,6 +9,15 @@
     <form class="col-12" action="/channels/add" method="post" enctype="multipart/form-data">
         <div class="col-12 border">
             <p class="m-0">Create a Channel</p>
+            <% if (locals.errors && locals.errors.channels.general) { %>
+                <div class="generic-errors row justify-content-md-center py-0 alert alert-primary col-12">
+                    <div class=" col-12">
+                        <% locals.errors.channels.general.forEach(function(error) { %>
+                            <h5 class="alert-primary" role="alert"><%= error %></h5>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } %> 
         </div>
         <div class="col-12 p-0 border">
             <div class="form-group col-12">
@@ -16,7 +25,7 @@
                 <input type="text" name="name" class="form-control" placeholder="Channel_Name">
             </div>
         
-            <div class="form-group col-12">
+            <div class="form-group col-12 pt-0">
                 <label>Choose a Channel avatar</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="photo" name="avatar" id="avatar-upload">
@@ -25,12 +34,12 @@
             </div>
         </div> 
         
-        <div id="add-user" class=" col-12 row m-0 p-0 row-horizon d-flex flex-row flex-nowrap scrolling-wrapper">
+        <div id="add-user" class=" col-12 row m-0 row-horizon d-flex flex-row flex-nowrap scrolling-wrapper">
             <% if (users) { %>
                 <% users.forEach(function(user) { %>
                     <div class="col-md-2 col-4 border ">
                         <div class="row p-0 m-0 justify-content-center">
-                            <img src="<%= user.image %>" alt="<%= user.image %>" class="rounded-circle border border-dark text-center maxsize-6vw">
+                            <img src="<%= user.image %>" alt="<%= user.image %>" class="rounded-circle text-center maxsize-6vw">
                         </div>
                         <div class="row p-0 m-0 justify-content-center">
                             <div class="div">

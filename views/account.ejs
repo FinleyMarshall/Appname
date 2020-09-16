@@ -4,7 +4,7 @@
 
 <div class="container p-0 col-12">
     <h5 class="col-12 border">
-        User Settings
+        <%= user.displayName %> Settings
     </h5>
 
     <div class="col-12 row p-0">
@@ -21,7 +21,7 @@
 
             <div>
                 <p class="p-0 left">Avatar</p>
-                <img src="<%= user.photoURL %>" class="card-img middle" alt="<%= user.photoURL %>" style="width: 33vw; height: 33vw;">
+                <img src="<%= user.photoURL %>" class="card-img-top" alt="<%= user.photoURL %>" >
             </div>
         </form>
         <div class="col-md-7 p-0">

@@ -17,9 +17,9 @@ var participants = (locals.channel.inUsers) ? locals.channel.inUsers : false
 					<% participants.forEach(function(user) { %>
 						<div id="user<%= user.id %>"  class="border col-sm-12 col-6">
 							<div class="avatar">
-								<img class="rounded-circle border border-dark text-center maxsize-6vw" src="<%= user.image %>" alt="<%= user.name %>">
+								<img class="rounded-circle text-center maxsize-6vw" src="<%= user.image %>" alt="<%= user.name %>">
 							</div>
-							<p class="m-0"><%= user.name %> <small class="text-muted d-none"> typing... </small></p>
+							<p class="m-0"><%= user.name %> <small class="d-none"> typing... </small></p>
 						</div>
 					<% }) %>
 					</div>
@@ -28,6 +28,7 @@ var participants = (locals.channel.inUsers) ? locals.channel.inUsers : false
 					<p><div class="alert alert-primary" role="alert">Make some friends on here and add them to your channels!</div></p>
 				<% }  %>
 			</div>  
+
 			<main role="main" class="col-sm-9 p-0">
 				<h5 class="col-12 border"><%= showChannel.name %></h5>
 				<div id="chat" class="col-12 overflow-auto1 py-0 border">
@@ -47,7 +48,7 @@ var participants = (locals.channel.inUsers) ? locals.channel.inUsers : false
 					<div class="message <%=message.direction%> col-12" data-time="<%=message.time%>">
 						<div class="border row b-dg">
 							<div class="col-2 left">
-								<img class="rounded-circle maxsize-6vw" src="<%=message.user.image%>" class="card-img-top" alt="Image">
+								<img class="rounded-circle maxsize-6vw" src="<%=message.user.image%>" alt="Image">
 							</div>
 							<div class="col-8">
 								<h5><%=message.user.name%></h5>
@@ -64,24 +65,24 @@ var participants = (locals.channel.inUsers) ? locals.channel.inUsers : false
 					</div> 
 					<% }) %>
 				<% }  %>
-				</div>           
-				<div id="message">
-					<div class="border col-12"> 								
-						<form id="message-form">
-							<div class="form-group">
-								<label>Message</label>
-								<textarea class="form-control" id="message-box" placeholder="Type your message here" rows="1"></textarea>
-								<input 
-									data-user='{"uid":"<%= locals.user.uid %>","name":"<%= locals.user.displayName %>","image":"<%= locals.user.photoURL %>"}'
-									data-channel='{"uid":"<%= showChannel.id %>","name":"<%= showChannel.name %>"}'
-									type="hidden" id="chat-info">
-							</div>
+				</div> 
 
-							<button id="send-message" type="submit" class="btn btn-secondary">
-								Send
-							</button>
-						</form>
-					</div>
+				<div class="navbar fixed-bottom col-12 p-0 row" id="message">	
+					<div class="col-sm-3 p-0"></div>							
+					<form id="message-form" class="col-sm-9 border b-dg">
+						<div class="form-group">
+							<label>Message</label>
+							<textarea class="form-control" id="message-box" placeholder="Type your message here" rows="1"></textarea>
+							<input 
+								data-user='{"uid":"<%= locals.user.uid %>","name":"<%= locals.user.displayName %>","image":"<%= locals.user.photoURL %>"}'
+								data-channel='{"uid":"<%= showChannel.id %>","name":"<%= showChannel.name %>"}'
+								type="hidden" id="chat-info">
+						</div>
+
+						<button id="send-message" type="submit" class="btn btn-secondary">
+							Send
+						</button>
+					</form>
 				</div>
 			</main>
 		</div> <!-- end .row --> 
