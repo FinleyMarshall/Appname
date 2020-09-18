@@ -37,17 +37,19 @@
         <div id="add-user" class=" col-12 row m-0 row-horizon d-flex flex-row flex-nowrap scrolling-wrapper">
             <% if (users) { %>
                 <% users.forEach(function(user) { %>
-                    <div class="col-md-2 col-4 border ">
-                        <div class="row p-0 m-0 justify-content-center">
-                            <img src="<%= user.image %>" alt="<%= user.image %>" class="rounded-circle text-center maxsize-6vw">
-                        </div>
-                        <div class="row p-0 m-0 justify-content-center">
-                            <div class="div">
-                                <input id="<%= user.id %>" type="checkbox"  name="users" value="<%= user.id %>">
-                                <label for="<%= user.id %>"><%= user.name %></label>
+                    <% if (user.name) { %>
+                        <div class="col-md-2 col-4 border ">
+                            <div class="row p-0 m-0 justify-content-center">
+                                <img src="<%= user.image %>" alt="<%= user.image %>" class="rounded-circle text-center maxsize-6vw">
+                            </div>
+                            <div class="row p-0 m-0 justify-content-center">
+                                <div class="div">
+                                    <input id="<%= user.id %>" type="checkbox"  name="users" value="<%= user.id %>">
+                                    <label for="<%= user.id %>"><%= user.name %></label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <% } %>
                 <% }) %>
             <% } %>
         </div>
@@ -70,16 +72,18 @@
         <% if (owned) { %>
             <div class="col-12 p-0 row">
             <% owned.forEach(function(channel) { %>
-                <div class="col-md-4 col-6 p-0 card">
-                    <div class="col-12 px-0 pt-0">
-                        <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= channel.name %></h5>
-                            <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
-                            <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <% if (channel.name) { %>
+                    <div class="col-md-4 col-6 p-0 card">
+                        <div class="col-12 px-0 pt-0">
+                            <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= channel.name %></h5>
+                                <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                                <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <% }  %>
             <% }) %>
             </div>
         <% }  %>
@@ -92,15 +96,17 @@
         <% if (subscribed) { %>
             <div class="col-12 p-0 row">
             <% subscribed.forEach(function(channel) { %>
-                <div class="col-md-4 col-6 p-0 card">
-                    <div class="col-12 px-0 pt-0">
-                        <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= channel.name %></h5>
-                            <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                <% if (channel.name) { %>
+                    <div class="col-md-4 col-6 p-0 card">
+                        <div class="col-12 px-0 pt-0">
+                            <img src="<%= channel.image %>" class="card-img-top " alt="<%= channel.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= channel.name %></h5>
+                                <a href="/channel/<%= channel.id %>/" class="btn btn-secondary">Message <%= channel.name %></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <% }  %>
             <% }) %>
             </div>
         <% }  %>

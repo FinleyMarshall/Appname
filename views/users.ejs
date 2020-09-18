@@ -19,15 +19,17 @@ var participants = locals.channels.users
             <div id="participants" class="col-12 p-0">
                 <div class="col-12 p-0 row">
                 <% participants.forEach(function(user) { %>
-                    <div id="user<%= user.id %>"  class="col-md-4 col-6 p-0">
-                        <div class="col-12 px-0 pt-0 card">
-                            <img src="<%= user.image %>" class="card-img-top" alt="<%= user.name %>">
-                            <div class="card-body">
-                            <h5 class="card-title"><%= user.name %></h5>
-                            <a href="#" class="btn btn-secondary">Message <%= user.name %></a>
+                    <% if (user.name) { %>
+                        <div id="user<%= user.id %>"  class="col-md-4 col-6 p-0">
+                            <div class="col-12 px-0 pt-0 card">
+                                <img src="<%= user.image %>" class="card-img-top" alt="<%= user.name %>">
+                                <div class="card-body">
+                                <h5 class="card-title"><%= user.name %></h5>
+                                <a href="#" class="btn btn-secondary">Message <%= user.name %></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <% }  %>
                 <% }) %>
                 </div>
             </div>
